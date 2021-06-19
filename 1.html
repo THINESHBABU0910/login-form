@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans',  sans-serif ;
+    user-select:none;
+	color:#fff;
+}
+
+body:after{
+	position:absolute;
+	content:"";
+    top:0;left:0;bottom:0;right:0;
+	background-image:url('background.jpg');
+    background-size:cover;
+    opacity:.9;
+    width:100%;
+    z-index:-1;
+}
+.main_div{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+}
+.box{
+    width: calc(100% - 20px);
+	max-width:400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 10px;
+}
+.box h1{
+    margin-bottom: 30px;
+    color:#fff;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.box .inputBox{
+    position: relative;
+}
+.box .inputBox input{
+    width: 100%;
+    padding: 10px;
+    font: size 16px;
+    color:#fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff ;
+    background: transparent;
+    outline: none;
+}
+.box .inputBox input:focus{
+	border-bottom: 1px solid #03a9f4 ;
+}
+
+.material-icons{
+	position:absolute;
+    top:0;
+	right:10px;
+    letter-spacing: 1px;
+    padding: 7px 0;
+    font-size: 20px;
+    color:#fff;
+    cursor:pointer;
+    outline:none;
+}
+
+.box .inputBox label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.5s;
+    cursor:text;
+}
+.box .inputBox input:focus ~ label , .box .inputBox input:not(:placeholder-shown) ~ label{
+    top: -20px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 12px;
+}
+.box #forgot-password{
+	font-size:.8rem;
+	text-align:right;
+	color:rgba(255,255,255,.8);
+}
+.box #forgot-password:hover{
+	color:#fff;
+	text-decoration:underline;
+}
+
+.box input[ type="submit"]{
+	width:60%;
+	margin:20px 20%; 
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+	cursor:pointer;
+	transition:all .25s ease;
+}
+.box input[type="submit"]:hover{
+	box-shadow:0 0px 10px 0 rgba(3, 169, 244,.25);
+	transform: translateY(-5px) scale(1.02);
+}
+
+.other-links-box{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin:8px 0 0 0;
+}
+.before-line, .after-line{
+	background:#fff;
+	height:1px;
+	width:40%;
+}
+.other-links{
+	display:inline;
+	position:relative;
+	margin:10px 5px;
+	background:inherit;
+}
+
+.social-links{
+	display:flex;
+	justify-content:space-around;
+	width:50%;
+	margin:auto 25%;
+	padding:0;
+}
+svg{
+	height:35px;
+	width:35px;
+	cursor:pointer;
+	transition:.15s ease-out;
+}
+svg:hover{
+	transform:scale(1.2);
+}
+
+    </style>
+</head>    
+<body>
+    <body>
+        
+    <div class="main_div">
+        <div class="box" >
+            <h1>Log In</h1>
+         <form name="f1" action = "thinesh.php" onsubmit = "return validation()" method = "POST">  
+        <div class="inputBox" >
+            <input type="text" id="username" name ="username" autocomplete="off" placeholder=" " required>
+            <label for="username"> username </label>
+        </div>
+        <div class="inputBox" >
+            <input type="password" id="password" name ="password" autocomplete="off" placeholder=" " style="margin-bottom:7px;" required>
+            <label for="password"> password </label>
+            <span class="material-icons">visibility</span>
+        </div>
+		<p id="forgot-password">Forgot password?</p>
+        <input type="submit" name= "" value="log in" >
+		<div class="other-links-box">
+		<div class="before-line"></div>
+		<span class="other-links">or&nbsp;sign&nbsp;up&nbsp;using</span>
+		<div class="after-line"></div>
+		</div>
+		
+		<div class="social-links">
+			<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px" >
+				<path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px">
+				<path fill="#f4511e" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"/><path fill="#fff" d="M34 19H36V27H34z"/><path fill="#fff" d="M31 22H39V24H31zM27.815 22.2l-.05-.2H19v3h5.91c-.477 2.837-2.938 5-5.91 5-3.314 0-6-2.686-6-6s2.686-6 6-6c1.5 0 2.868.554 3.92 1.465l2.151-2.106C23.471 15.894 21.34 15 19 15c-4.971 0-9 4.029-9 9s4.029 9 9 9 9-4.029 9-9C28 23.383 27.934 22.782 27.815 22.2z"/>
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px">
+				<linearGradient id="Ld6sqrtcxMyckEl6xeDdMa" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"/><stop offset="1" stop-color="#007ad9"/></linearGradient>
+				<path fill="url(#Ld6sqrtcxMyckEl6xeDdMa)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"/><path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"/>
+			</svg>
+		</div>
+
+    </form>
+        </div>
+    </div>
+    <script>  
+        function validation()  
+        {  
+            var id=document.f1.user.value;  
+            var ps=document.f1.pass.value;  
+            if(id.length=="" && ps.length=="") {  
+                alert("User Name and Password fields are empty");  
+                return false;  
+            }  
+            else  
+            {  
+                if(id.length=="") {  
+                    alert("User Name is empty");  
+                    return false;  
+                }   
+                if (ps.length=="") {  
+                alert("Password field is empty");  
+                return false;  
+                }  
+            }                             
+        }  
+      
+    </script> 
+    
+    <script>
+		//password visibility toggle
+      const togglePassword = document.querySelector('.material-icons');
+      const password = document.querySelector('#password');
+      
+      togglePassword.addEventListener('click', function (e) {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+
+      if (this.innerHTML === "visibility") {
+        this.innerHTML = "visibility_off";
+      }
+      else {
+        this.innerHTML = "visibility";
+      }
+  	});
+    
+    </script>
+    
+</body>     
+</html>  
+</body>
+</html
